@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background: #000;
+  }
+  .center{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  .outer{
+    position: relative;
+    margin: 0 50px;
+    background: #111;
+  }
+  .button{
+    height: 70px;
+    width: 220px;
+    border-radius: 50px;
+  }
+  .outer button, .outer span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .outer button{
+    background: #111;
+    color: #f2f2f2;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    z-index: 9;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .button button{
+    height: 60px;
+    width: 210px;
+    border-radius: 50px;
+  }
+  .outer span{
+    height: 100%;
+    width: 100%;
+    background: inherit;
+  }
+  .button span{
+    border-radius: 50px;
+  }
+  .outer:hover span:nth-child(1){
+    filter: blur(7px);
+  }
+  .outer:hover span:nth-child(2){
+    filter: blur(14px);
+  }
+  .outer{
+    background: linear-gradient(#14ffe9, #ffeb3b, #ff00e0);
+    animation: rotate 1.5s linear infinite;
+  }
+  @keyframes rotate {
+    0%{
+      filter: hue-rotate(0deg);
+    }
+    100%{
+      filter: hue-rotate(360deg);
+    }
+  }
+  @media (max-width: 640px){
+    .center{
+      flex-wrap: wrap;
+      flex-direction: column;
+    }
+    .outer{
+      margin: 50px 0;
+    }
+  }
+  ::selection{
+    color: #fff;
+    background: #675AFE;
+  }
+  .detect{
+    position: absolute;
+    top: 90%;
+    position: center center;
+    display: flex;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 0px 5px;
+    align-items: center;
+    border-radius: 20px;
+    justify-content: center;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.178);
+  }
+  .detect h2{
+    color: #353e4e;
+    font-size: 30px;
+  }
+  .detect .logos{
+    margin-left: 15px;
+  }
+  .logos img{
+    opacity: 0.3;
+    margin: 0 7px;
+    transition: opacity 0.4s ease;
+  }
+  .logos img:last-child{
+    margin-right: 0px;
+  }
